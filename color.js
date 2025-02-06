@@ -10,34 +10,34 @@ let score = 0;
 
 function startGame() {
     targetColor = colors[Math.floor(Math.random() * colors.length)];
-    colorBox.style.backgroundColor = targetColor;
+    colorBox.style.backgroundColor = "#d3d3d3";
+
     colorOptions.innerHTML = "";
-    
+
     let shuffledColors = [...colors].sort(() => Math.random() - 0.5);
     shuffledColors.forEach(color => {
         const btn = document.createElement("button");
         btn.setAttribute("data-testid", "colorOption");
-        btn.classList.add("hidden-color");
-        btn.onclick = () => revealColor(btn, color);
+        btn.style.backgroundColor = color;
+        btn.onclick = () => checkGuess(color);
         colorOptions.appendChild(btn);
     });
-    statusText.textContent = "";
-}
 
-function revealColor(button, color) {
-    button.style.backgroundColor = color;
-    checkGuess(color);
+    statusText.textContent = "";
 }
 
 function checkGuess(color) {
     if (color === targetColor) {
         statusText.textContent = "Correct!";
         statusText.style.color = "green";
+        colorBox.style.backgroundColor = targetColor; 
         score++;
         scoreText.textContent = score;
-        setTimeout(startGame, 1000);
+        setTimeout(() => {
+            startGame();
+        }, 1000);
     } else {
-        statusText.textContent = "Wrong! Try again.";
+        statusText.textContent = "Wrong! Click another color button to Try again.";
         statusText.style.color = "red";
     }
 }
