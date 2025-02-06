@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>color game</title>
+    <title>colour game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="instructions-container">
-            <h2>How it works</h2>
-            <p>The target colour is displayed in the colourBox.</p>
-            <p>The colour options include the target color.</p>
-            <p>Clicking the correct colour updates the score and starts a new round.</p>
-            <p>Clicking the wrong colour displays a "Wrong! Try again." message.</p>
-            <p>The "New Game" button resets the score and starts a new round.</p>
-        </div>
-        <div class="game-container">
-            <h1>Colour-me Clone</h1>
-            <div class="colour-box" data-testid="colourBox"></div>
-            <p class="instructions" data-testid="gameInstructions">Can you Guess the correct colour?</p>
-            <div class="colour-options" data-testid="colourOptions"></div>
-            <p class="status" data-testid="gameStatus"></p>
-            <p class="score">Score: <span data-testid="score">0</span></p>
-            <button class="new-game-btn" data-testid="newGameButton">New Game</button>
-        </div>
+        <h1>Clone Colour Guessing</h1>
+        <p class="game-description">This is a fun colour guessing game. A target colour is displayed, and you have to guess the correct colour from hidden choices. Click on a colour to see if you guessed right. Good luck!</p>
+        <div class="color-box" data-testid="colorBox"></div>
+        <p class="instructions" data-testid="gameInstructions">Guess the correct color!</p>
+        <div class="color-options" data-testid="colorOptions"></div>
+        <p class="status" data-testid="gameStatus"></p>
+        <p class="score">Score: <span data-testid="score">0</span></p>
+        <button class="new-game-btn" data-testid="newGameButton">New Game</button>
     </div>
     <script src="color.js"></script>
 </body>

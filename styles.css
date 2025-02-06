@@ -5,107 +5,73 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: white;
-    color: black;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    max-width: 900px;
-    width: 100%;
-}
-
-.instructions-container {
-    flex: 1;
-    min-width: 280px;
-}
-
-.game-container {
-    flex: 1;
+    background: #ffffff;
+    color: #333;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+}
+.container {
+    background: #ffffff;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
 }
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.game-description {
+    font-size: 14px;
+    margin-bottom: 15px;
 }
-
-.colour-box {
+.color-box {
     width: 150px;
     height: 150px;
-    margin: 0 auto 20px;
+    margin: 20px auto;
     border-radius: 10px;
-    background-color: #000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-.instructions {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.colour-options {
+.color-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 20px;
 }
-
-.colour-options button {
+.color-options button {
     width: 100%;
     height: 50px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    background-color: #d3d3d3;
     transition: transform 0.2s ease;
 }
-
-.colour-options button:hover {
+.color-options button:hover {
     transform: scale(1.05);
 }
-
 .status {
     font-size: 16px;
     margin-bottom: 10px;
 }
-
 .score {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
 .new-game-btn {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: #6a11cb;
+    background-color: #ff9800;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .new-game-btn:hover {
-    background-color: #2575fc;
+    background-color: #f57c00;
 }
-
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .container {
-        flex-direction: column;
-        align-items: center;
+        width: 90%;
     }
-    .instructions-container, .game-container {
-        width: 100%;
-        text-align: center;
+    .color-options {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
